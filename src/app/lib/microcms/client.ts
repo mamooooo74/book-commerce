@@ -16,6 +16,7 @@ export const getAllBooks = async () => {
 
 export const getDetailBook = async (contentId: string) => {
   const detailBook = await client.getListDetail<BookType>({
+    customRequestInit: { cache: "no-store" },
     endpoint: "bookcomerce",
     contentId,
   });
